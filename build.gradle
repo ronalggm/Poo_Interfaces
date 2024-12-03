@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+id 'application'//habilita la tarea run
 }
 
 group = 'org.example'
@@ -8,12 +9,11 @@ version = '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+application{
+    mainClass= 'org.ronal.poointerfaces.imprenta.EjemploImprenta'
+}
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-}
-
-test {
-    useJUnitPlatform()
 }
