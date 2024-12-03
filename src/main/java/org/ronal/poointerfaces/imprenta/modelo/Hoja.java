@@ -1,6 +1,6 @@
 package org.ronal.poointerfaces.imprenta.modelo;
 
-abstract public class Hoja {
+abstract public class Hoja implements Imprimible {
     protected String contenido;
 
 
@@ -9,6 +9,5 @@ abstract public class Hoja {
     }
 
 
-    abstract public String imprimir();
 
 }
