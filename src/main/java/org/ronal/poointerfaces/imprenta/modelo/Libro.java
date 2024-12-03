@@ -1,9 +1,10 @@
 package org.ronal.poointerfaces.imprenta.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Libro implements Imprimible {
-    private List<Hoja> paginas;
+    private List<Imprimible> paginas;
     private String autor;
     private String titulo;
     private Genero genero;
@@ -12,6 +13,7 @@ public class Libro implements Imprimible {
         this.autor = autor;
         this.titulo = titulo;
         this.genero = genero;
+        paginas=new ArrayList<>();
     }
 
     public Libro addPagina(Hoja pagina) {
@@ -28,8 +30,8 @@ public class Libro implements Imprimible {
                 .append("\n")
                 .append("Genero: ").append(genero)
                 .append("\n");
-        for (Hoja paginas : this.paginas) {
-            sb.append(paginas.imprimir()).append("\n");
+        for (Imprimible pag : this.paginas) {
+            sb.append(pag.imprimir()).append("\n");
         }
         return sb.toString();
     }
