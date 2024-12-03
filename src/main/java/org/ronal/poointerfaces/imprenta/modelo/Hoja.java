@@ -1,7 +1,7 @@
 package org.ronal.poointerfaces.imprenta.modelo;
 
 abstract public class Hoja {
-    protected                                                                                                                                                                                    String contenido;
+    protected String contenido;
 
 
     public Hoja(String contenido) {

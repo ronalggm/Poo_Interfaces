@@ -19,6 +19,9 @@ public class EjemploImprenta {
         imprimir(cv);
         imprimir(informe);
 
+
+        System.out.println("LIBRO:");
+        Libro libro = new Libro("Erich Gamma", "Patrones de diseño", Genero.PROGRAMACION);
     }
 
     public static void imprimir(Hoja imprimible) {
