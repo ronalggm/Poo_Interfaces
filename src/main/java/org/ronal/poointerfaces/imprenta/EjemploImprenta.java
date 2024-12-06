@@ -3,11 +3,12 @@ package org.ronal.poointerfaces.imprenta;
 import org.ronal.poointerfaces.imprenta.modelo.*;
 
 import static org.ronal.poointerfaces.imprenta.modelo.Genero.*;
+import static org.ronal.poointerfaces.imprenta.modelo.Imprimible.imprimir;
 
 public class EjemploImprenta {
     public static void main(String[] args) {
 
-        Curriculum cv = new Curriculum("John doe", "Ingeniero de sistemas", "Resumen laboral...");
+        Curriculum cv = new Curriculum("CV", new Persona("CACUMA", "HAMARU"), "Resumen laboral...");
         cv.addExperiencia("JAVA")
                 .addExperiencia("Oracle dba")
                 .addExperiencia("Spring Framework")
@@ -18,7 +19,12 @@ public class EjemploImprenta {
         System.out.println();
         imprimir(cv);
 
-        Informe informe = new Informe("Martin Fower", "James", "Estudio sobre microservicios");
+        Informe informe =
+                new Informe(new Persona("Martin", "Fower"),
+                        new Persona("James", "Gostling"),
+                        "Estudio sobre microservicios");
+
+
         System.out.println();
         System.out.println("INFORME:");
         imprimir(informe);
@@ -41,7 +47,4 @@ public class EjemploImprenta {
     }
 
 
-    public static void imprimir(Imprimible imprimible) {
-        System.out.println(imprimible.imprimir());
-    }
 }
