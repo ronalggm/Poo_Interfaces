@@ -25,11 +25,15 @@ public class EjemploImprenta {
         System.out.println();
 
         System.out.println("LIBRO:");
-        Libro libro = new Libro("Erich Gamma", "Patrones de diseño", PROGRAMACION);
+
+        Libro libro = new Libro(new Persona("Pepe", "Mujica")
+                , "Patrones de diseño"
+                , PROGRAMACION);
 
         libro.addPagina(new Pagina(("Patron singletos")))
                 .addPagina(new Pagina("Patrón Observador "))
-                .addPagina(new Pagina("Patrón Composite"));
+                .addPagina(new Pagina("Patrón Composite"))
+                .addPagina(new Pagina("Patrón Facade"));
 
         System.out.println("LIBRO");
         System.out.println();
