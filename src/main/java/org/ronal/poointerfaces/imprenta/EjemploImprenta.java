@@ -44,7 +44,20 @@ public class EjemploImprenta {
         System.out.println("LIBRO");
         System.out.println();
         imprimir(libro);
+
+
+        //Con clase anonima: imprimira el metodo imprimir porque es un metodo por defecto
+        imprimir(new Imprimible() {
+        });
+
+
+        Imprimible objImpr = new Imprimible() {
+            @Override
+            public String imprimir() {
+                return "Hola que tal, imprimiendo un objeto genérico de una clase anonima!";
+            }
+        };
+
     }
-
-
 }
+
